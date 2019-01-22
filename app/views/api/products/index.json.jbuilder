@@ -4,4 +4,10 @@ json.array! @products.each do |product|
 	json.price product.price
 	json.description product.description
 	json.image_url product.image_url
+
+	json.formatted do
+		json.discounted product.is_discounted?
+		json.tax product.tax
+		json.total product.total
+	end
 end
